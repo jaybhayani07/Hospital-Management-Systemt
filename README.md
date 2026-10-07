@@ -45,36 +45,6 @@ The system is divided into several robust modules to handle day-to-day hospital 
 
 ---
 
-## 💻 Local Setup Instructions
-
-### Prerequisites
-* Java 21+
-* Node.js 18+
-* PostgreSQL (or a NeonDB instance)
-
-### 1. Backend Setup
-1. Open the `Hospital_Management` directory.
-2. Duplicate the `application.properties.example` file and rename it to `application.properties`.
-3. Fill in your PostgreSQL database credentials and Groq API key in `application.properties`.
-4. Run the backend using Maven:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-### 2. Frontend Setup
-1. Open a new terminal and navigate to the `frontend` directory.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
-4. The frontend will run on `http://localhost:5173` and will automatically proxy API requests to the Spring Boot backend running on port `2503`.
-
----
-
 ## 🚢 Deployment Architecture
 * **Frontend:** Deployed as a static site. The Vite configuration is bypassed in production, utilizing Render's Rewrite Rules to forward `/api/*` traffic to the backend URL.
 * **Backend:** Deployed as a Web Service on Render using a custom `Dockerfile` based on the `eclipse-temurin:21` image to ensure absolute compatibility with the latest Java versions.
