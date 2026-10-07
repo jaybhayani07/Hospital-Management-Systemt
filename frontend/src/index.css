@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans;
+  }
+}
+
+/* ─── Sidebar Toggle Transitions ───────────────────────────────────────────────── */
+.sidebar-transition {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-closed .sidebar-transition {
+  transform: translateX(-100%);
+}
+
+.ml-64 {
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-closed .ml-64 {
+  margin-left: 0 !important;
+}
